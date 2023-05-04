@@ -18,16 +18,18 @@ Para consultar o ativo bancário deve-se somar o saldo de todas as contas do ban
 voltar ao menu.
 O programa só termina quando for digitada a opção 4 – Finalizar o programa.
 """
-
-contas = [0] * 10
+# Criação das listas vazias para armazenar os códigos e saldos das contas bancárias
+contas = [0] * 10 # lista para armazenar os códigos das contas
 saldos = [0] * 10
 
+#Loop para cadastrar as contas
 for c in range(10):
     repete = True
     while repete:
         print("Digite o numero da conta")
         numero = int(input())
         i = 0
+        # Verifica se o código já existe na lista
         while i < 10:
             if numero == contas[i]:
                 print("Conta duplicada")
@@ -39,7 +41,7 @@ for c in range(10):
             repete = False
     print("Digite o saldo")
     saldos[c] = int(input())
-
+# Exibe o menu de opções
 opcao = 0
 while opcao != 4:
     print("Menu")
@@ -49,6 +51,7 @@ while opcao != 4:
     print("4.	Finalizar o programa")
     print("Digite a opcao")
     opcao = int(input())
+    # Opção 1: Efetuar depósito
     if opcao == 1:
         print("Digite o numero da conta")
         numero = int(input())
@@ -63,6 +66,7 @@ while opcao != 4:
             i = i + 1
         if i == 10:
             print("Conta nao encontrada")
+    # Opção 2: Efetuar saque
     if opcao == 2:
         print("Digite o numero da conta")
         numero = int(input())
@@ -80,6 +84,7 @@ while opcao != 4:
             i = i + 1
         if i == 10:
             print("Conta nao encontrada")
+    # Opção 3: Consultar o ativo bancário
     if opcao == 3:
         total = 0
         for i in range(10):
